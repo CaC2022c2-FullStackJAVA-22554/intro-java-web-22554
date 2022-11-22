@@ -1,0 +1,57 @@
+img {
+    display: inline-block;
+}
+
+p {
+    color: blue;
+    text-align: center;
+}
+
+.fondo-celeste {
+    background: #b2fef9;
+}
+
+.caja {
+    background-color: yellow;
+    font-size: 30px;
+}
+
+html {
+    /* Valor por default: 16px*/
+    font-size: 20px;
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.otro-tamanio {
+    font-size: 1rem;
+}
+
+.ingredientes {
+    list-style-image: url("../img/milanesa.jpg");
+}
+
+.titulo {
+    font-size: 2em;
+}
+
+.negrita {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.color-azul {
+    color: #233697;
+}
+
+#itemSuper {
+    color: orange;
+    text-transform: uppercase;
+}
+
+ol li::marker {
+    color: red;
+}

@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ingredientes,
+.pasos {
+    float: left;
+    width: 50%;
+    background: rgb(62, 62, 22);
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+
+.fondo-azul {
+    background: rgb(39, 53, 79);
+    color: white;
+    border: 10px solid rgb(97, 117, 155);
+    padding: 10px;
+    margin: 10px;
+}
+
+.foto-receta {
+    width: 100%;
+}
+
+a {
+    color: cyan;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+.clearfix {
+    overflow: auto;
+}
