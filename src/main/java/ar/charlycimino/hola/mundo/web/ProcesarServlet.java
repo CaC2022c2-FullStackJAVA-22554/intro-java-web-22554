@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  *
@@ -17,21 +16,23 @@ import java.io.PrintWriter;
  */
 @WebServlet(name = "procesar", urlPatterns = {"/procesar-saludo"})
 public class ProcesarServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+    
+    /*
+        PEDIRLE AL USUARIO SU FECHA DE NACIMIENTO. EL SERVIDOR LE DICE LA EDAD
+    */
+    private Modelo model;
+    
+    public ProcesarServlet() {
+        model = new Modelo();
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nombreDelCliente = req.getParameter("fname");
         
-        PrintWriter out = resp.getWriter();
-        out.println("<html>");
-        out.println("<head><title>SALUDANDO</title></head>");
-        out.println("<body><h1>Hola " + nombreDelCliente + "</h1></body>");
-        out.println("</html>");
+        String fechaNacimiento = req.getParameter("fNac");
+        int laEdad = model.edad(fechaNacimiento);
+        req.setAttribute("edad", laEdad);
+        req.getRequestDispatcher("saludo.jsp").forward(req, resp);
     }
     
 }
